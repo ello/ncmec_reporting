@@ -1,0 +1,75 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: ***REMOVED***/submit
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><report xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://report.cybertip.org/ispws/xsd"><incidentSummary><incidentType>Child
+        Pornography (possession, manufacture, and distribution)</incidentType><incidentDateTime>2012-10-15T09:00:00-06:00</incidentDateTime></incidentSummary><reporter><reportingPerson><firstName>Test</firstName><lastName>User</lastName></reportingPerson></reporter></report>
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Content-Type:
+      - text/xml; charset=utf-8
+      Authorization:
+      - Basic ZWxsb19lc3B0ZXN0OmQhNXRyVDN0IW5n
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 06 Nov 2014 19:13:14 GMT
+      Content-Type:
+      - application/xml;charset=ISO-8859-1
+      Content-Language:
+      - en-US
+      Content-Length:
+      - '196'
+      Set-Cookie:
+      - BIGipServerexttest.cybertip.org.app~exttest.cybertip.org_pool=2248154796.20480.0000;
+        path=/
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><reportResponse><responseCode>0</responseCode><responseDescription>Success</responseDescription><reportId>2426665</reportId></reportResponse>
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: ***REMOVED***/submit
+  recorded_at: Thu, 06 Nov 2014 19:13:15 GMT
+- request:
+    method: post
+    uri: ***REMOVED***/finish
+    body:
+      encoding: US-ASCII
+      string: id=2426665
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Basic ZWxsb19lc3B0ZXN0OmQhNXRyVDN0IW5n
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 06 Nov 2014 19:13:15 GMT
+      Content-Type:
+      - application/xml;charset=ISO-8859-1
+      Content-Language:
+      - en-US
+      Content-Length:
+      - '162'
+      Set-Cookie:
+      - BIGipServerexttest.cybertip.org.app~exttest.cybertip.org_pool=2248154796.20480.0000;
+        path=/
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><reportDoneResponse><responseCode>0</responseCode><reportId>2426665</reportId><files/></reportDoneResponse>
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: ***REMOVED***/finish
+  recorded_at: Thu, 06 Nov 2014 19:13:15 GMT
+recorded_with: VCR 2.9.3

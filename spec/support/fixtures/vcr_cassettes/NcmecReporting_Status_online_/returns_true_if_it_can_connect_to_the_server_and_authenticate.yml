@@ -1,0 +1,38 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: ***REMOVED***/status
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.0
+      Authorization:
+      - Basic ZWxsb19lc3B0ZXN0OmQhNXRyVDN0IW5n
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 06 Nov 2014 19:13:13 GMT
+      Content-Type:
+      - application/xml;charset=ISO-8859-1
+      Content-Language:
+      - en-US
+      Content-Length:
+      - '205'
+      Set-Cookie:
+      - BIGipServerexttest.cybertip.org.app~exttest.cybertip.org_pool=2248154796.20480.0000;
+        path=/
+    body:
+      encoding: UTF-8
+      string: '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><reportResponse><responseCode>0</responseCode><responseDescription>Remote
+        User : Ello, Remote Ip : 67.40.43.238</responseDescription></reportResponse>'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: ***REMOVED***/status
+  recorded_at: Thu, 06 Nov 2014 19:13:13 GMT
+recorded_with: VCR 2.9.3
