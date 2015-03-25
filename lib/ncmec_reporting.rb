@@ -3,7 +3,7 @@ require 'faraday'
 require 'typhoeus'
 require 'typhoeus/adapters/faraday'
 require 'aasm'
-require 'fog'
+require 'fog/aws'
 require 'builder'
 
 require 'ncmec_reporting/version'
