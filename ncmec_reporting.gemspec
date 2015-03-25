@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   # Not including test files as VCR file names are too long.
   # s.test_files  = `git ls-files -- {spec}/*`.split("\n")
 
-  s.add_dependency 'fog-aws'
+  s.add_dependency 'fog'
   s.add_dependency 'aasm'
   s.add_dependency 'nokogiri'
   s.add_dependency 'builder'
