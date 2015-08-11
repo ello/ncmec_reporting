@@ -15,6 +15,7 @@ describe NcmecReporting::Submission do
         reporter.reportingPerson do |person|
           person.firstName 'Test'
           person.lastName 'User'
+          person.email 'test@ello.co'
         end
       end
     end

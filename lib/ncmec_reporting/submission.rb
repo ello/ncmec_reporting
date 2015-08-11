@@ -91,12 +91,17 @@ module NcmecReporting
     end
 
     def report_valid?(report)
+      # TODO this should do real validation
+      # against XSD
+      # and worst case we should do something like
+      # doc.at_css('reportingPerson email')
       report.include?('incidentSummary') &&
       report.include?('incidentType') &&
       report.include?('incidentDateTime') &&
 
       report.include?('reporter') &&
       report.include?('reportingPerson')
+      report.include?('email')
     end
 
     def upload_fileinfo(file_id, fileinfo)
