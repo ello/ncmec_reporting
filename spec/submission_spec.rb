@@ -48,15 +48,15 @@ describe NcmecReporting::Submission do
       subject.submit(report)
     end
 
-    it 'errors without a incidentSummary with incidentType and incidentDateTime' do
+    it 'errors without a incidentSummary with incidentType and incidentDateTime', vcr: { record: :new_episodes } do
       bad_report = report.gsub(/<incidentSummary>.*<\/incidentSummary>/m, '')
-      expect { described_class.new.submit(bad_report) }.to raise_error(NcmecReporting::InvalidReport)
+      expect { described_class.new.submit(bad_report) }.to raise_error(NcmecReporting::InvalidRequest)
 
       bad_report = report.gsub(/<incidentDateTime>.*<\/incidentDateTime>/m, '')
-      expect { described_class.new.submit(bad_report) }.to raise_error(NcmecReporting::InvalidReport)
+      expect { described_class.new.submit(bad_report) }.to raise_error(NcmecReporting::InvalidRequest)
 
       bad_report = report.gsub(/<incidentSummary>.*<\/incidentSummary>/m, '')
-      expect { described_class.new.submit(bad_report) }.to raise_error(NcmecReporting::InvalidReport)
+      expect { described_class.new.submit(bad_report) }.to raise_error(NcmecReporting::InvalidRequest)
     end
 
     it 'errors without a reporter with reportingPerson' do

@@ -1,0 +1,122 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: ***REMOVED***/submit
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><report xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://report.cybertip.org/ispws/xsd"><reporter><reportingPerson><firstName>Test</firstName><lastName>User</lastName><email>test@ello.co</email></reportingPerson></reporter></report>
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Content-Type:
+      - text/xml; charset=utf-8
+      Authorization:
+      - Basic ZWxsb19lc3B0ZXN0OmQhNXRyVDN0IW5n
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 11 Aug 2015 23:05:45 GMT
+      Content-Type:
+      - application/xml;charset=ISO-8859-1
+      Content-Language:
+      - en-US
+      Content-Length:
+      - '322'
+      Set-Cookie:
+      - asdfjkl=!GjanrDFoD9/llflfZSxxvrbQscv0jHwMBdzKFB6Bs3YtVclB77iZGrC5y3qEKgx8gRE4iZ/UE1tjV3s=;
+        path=/
+    body:
+      encoding: UTF-8
+      string: '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><reportResponse><responseCode>1001</responseCode><responseDescription>Malformed
+        (xml) report submittal - cvc-complex-type.2.4.a: Invalid content was found
+        starting with element ''reporter''. One of ''{incidentSummary}'' is expected.</responseDescription></reportResponse>'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: ***REMOVED***/submit
+  recorded_at: Tue, 11 Aug 2015 23:05:46 GMT
+- request:
+    method: post
+    uri: ***REMOVED***/submit
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><report xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://report.cybertip.org/ispws/xsd"><incidentSummary><incidentType>Child
+        Pornography (possession, manufacture, and distribution)</incidentType></incidentSummary><reporter><reportingPerson><firstName>Test</firstName><lastName>User</lastName><email>test@ello.co</email></reportingPerson></reporter></report>
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Content-Type:
+      - text/xml; charset=utf-8
+      Authorization:
+      - Basic ZWxsb19lc3B0ZXN0OmQhNXRyVDN0IW5n
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 11 Aug 2015 23:13:52 GMT
+      Content-Type:
+      - application/xml;charset=ISO-8859-1
+      Content-Language:
+      - en-US
+      Content-Length:
+      - '345'
+      Set-Cookie:
+      - asdfjkl=!L/OntVfbQ1X4miRfZSxxvrbQscv0jK2DhNbBgtUtv15rnHHUhQ6sGMCYz5MIsbrVL/Sz2yT9XKATLJY=;
+        path=/
+    body:
+      encoding: UTF-8
+      string: '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><reportResponse><responseCode>1001</responseCode><responseDescription>Malformed
+        (xml) report submittal - cvc-complex-type.2.4.b: The content of element ''incidentSummary''
+        is not complete. One of ''{escalateToHighPriority, incidentDateTime}'' is
+        expected.</responseDescription></reportResponse>'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: ***REMOVED***/submit
+  recorded_at: Tue, 11 Aug 2015 23:13:49 GMT
+- request:
+    method: post
+    uri: ***REMOVED***/submit
+    body:
+      encoding: UTF-8
+      string: <?xml version="1.0" encoding="UTF-8"?><report xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://report.cybertip.org/ispws/xsd"><reporter><reportingPerson><firstName>Test</firstName><lastName>User</lastName><email>test@ello.co</email></reportingPerson></reporter></report>
+    headers:
+      User-Agent:
+      - Faraday v0.9.1
+      Content-Type:
+      - text/xml; charset=utf-8
+      Authorization:
+      - Basic ZWxsb19lc3B0ZXN0OmQhNXRyVDN0IW5n
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 11 Aug 2015 23:14:05 GMT
+      Content-Type:
+      - application/xml;charset=ISO-8859-1
+      Content-Language:
+      - en-US
+      Content-Length:
+      - '322'
+      Set-Cookie:
+      - asdfjkl=!lj12DppzENvEK0dfZSxxvrbQscv0jEnJxhCREh6K4B3Sf7DUO7dET6opQrqBW/d7dvZ92PPoyKbawgU=;
+        path=/
+    body:
+      encoding: UTF-8
+      string: '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><reportResponse><responseCode>1001</responseCode><responseDescription>Malformed
+        (xml) report submittal - cvc-complex-type.2.4.a: Invalid content was found
+        starting with element ''reporter''. One of ''{incidentSummary}'' is expected.</responseDescription></reportResponse>'
+    http_version: '1.1'
+    adapter_metadata:
+      effective_url: ***REMOVED***/submit
+  recorded_at: Tue, 11 Aug 2015 23:14:05 GMT
+recorded_with: VCR 2.9.3
