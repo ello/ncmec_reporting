@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: get
-    uri: ***REMOVED***/status
+    uri: "<NCMEC_ENDPOINT>/status"
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.9.0
+      - Faraday v0.9.1
       Authorization:
       - Basic YmFkdXNlcm5hbWU6YmFkcGFzc3dvcmQ=
   response:
@@ -17,15 +17,17 @@ http_interactions:
       message: Authorization Required
     headers:
       Date:
-      - Thu, 06 Nov 2014 19:13:13 GMT
+      - Wed, 03 Feb 2016 23:35:24 GMT
       Server:
       - Apache
       WWW-Authenticate:
       - Basic realm="ESP Web Services"
+      X-Frame-Options:
+      - SAMEORIGIN
       Last-Modified:
-      - Tue, 10 Jul 2012 13:50:07 GMT
+      - Wed, 11 Jul 2012 17:16:47 GMT
       ETag:
-      - '"a1663-c3-4c47a021a52ea"'
+      - '"a1711-c3-4c491030f6904"'
       Accept-Ranges:
       - bytes
       Content-Length:
@@ -33,7 +35,7 @@ http_interactions:
       Content-Type:
       - application/xml
       Set-Cookie:
-      - BIGipServerexttest.cybertip.org.app~exttest.cybertip.org_pool=2248154796.20480.0000;
+      - asdfjkl=!7PdlkoNAe9mKSaJfZSxxvrbQscv0jCEUg9J1MFjxbOHiZYc1WCs3uww67msIoLu0w9cKfrLKafc9XBg=;
         path=/
     body:
       encoding: UTF-8
@@ -46,6 +48,6 @@ http_interactions:
 
     http_version: '1.1'
     adapter_metadata:
-      effective_url: ***REMOVED***/status
-  recorded_at: Thu, 06 Nov 2014 19:13:13 GMT
-recorded_with: VCR 2.9.3
+      effective_url: "<NCMEC_ENDPOINT>/status"
+  recorded_at: Wed, 03 Feb 2016 23:35:05 GMT
+recorded_with: VCR 3.0.1

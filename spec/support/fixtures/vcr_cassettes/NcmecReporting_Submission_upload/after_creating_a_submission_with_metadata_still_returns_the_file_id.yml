@@ -2,26 +2,28 @@
 http_interactions:
 - request:
     method: post
-    uri: ***REMOVED***/submit
+    uri: "<NCMEC_ENDPOINT>/submit"
     body:
       encoding: UTF-8
       string: <?xml version="1.0" encoding="UTF-8"?><report xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="https://report.cybertip.org/ispws/xsd"><incidentSummary><incidentType>Child
-        Pornography (possession, manufacture, and distribution)</incidentType><incidentDateTime>2012-10-15T09:00:00-06:00</incidentDateTime></incidentSummary><reporter><reportingPerson><firstName>Test</firstName><lastName>User</lastName></reportingPerson></reporter></report>
+        Pornography (possession, manufacture, and distribution)</incidentType><incidentDateTime>2012-10-15T09:00:00-06:00</incidentDateTime></incidentSummary><reporter><reportingPerson><firstName>Test</firstName><lastName>User</lastName><email>test@ello.co</email></reportingPerson></reporter></report>
     headers:
       User-Agent:
-      - Faraday v0.9.0
+      - Faraday v0.9.1
       Content-Type:
       - text/xml; charset=utf-8
       Authorization:
-      - Basic ZWxsb19lc3B0ZXN0OmQhNXRyVDN0IW5n
+      - Basic <NCMEC_CREDS>
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Thu, 06 Nov 2014 19:13:18 GMT
+      - Wed, 03 Feb 2016 23:35:20 GMT
+      X-Frame-Options:
+      - SAMEORIGIN
       Content-Type:
       - application/xml;charset=ISO-8859-1
       Content-Language:
@@ -29,33 +31,33 @@ http_interactions:
       Content-Length:
       - '196'
       Set-Cookie:
-      - BIGipServerexttest.cybertip.org.app~exttest.cybertip.org_pool=2248154796.20480.0000;
+      - asdfjkl=!S5nTmlN0hPy06fRfZSxxvrbQscv0jAcofJt6sgWhvBGA7qrAGOyURU9PoGzGA2KGCt78ysoqlxTEWow=;
         path=/
     body:
       encoding: UTF-8
-      string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><reportResponse><responseCode>0</responseCode><responseDescription>Success</responseDescription><reportId>2426674</reportId></reportResponse>
+      string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><reportResponse><responseCode>0</responseCode><responseDescription>Success</responseDescription><reportId>7855776</reportId></reportResponse>
     http_version: '1.1'
     adapter_metadata:
-      effective_url: ***REMOVED***/submit
-  recorded_at: Thu, 06 Nov 2014 19:13:18 GMT
+      effective_url: "<NCMEC_ENDPOINT>/submit"
+  recorded_at: Wed, 03 Feb 2016 23:35:02 GMT
 - request:
     method: post
-    uri: ***REMOVED***/upload
+    uri: "<NCMEC_ENDPOINT>/upload"
     body:
       encoding: US-ASCII
-      string: id=2426674&file=bad_image.jpg=image/jpeg=/Users/mikepack/Documents/Work/ello/lib/ncmec_reporting/spec/support/fixtures/bad_image.jpg
+      string: id=7855776&file=bad_image.jpg=image/jpeg=/Users/jayzeschin/Downloads/ello/spec/support/fixtures/bad_image.jpg
     headers:
       User-Agent:
-      - Faraday v0.9.0
+      - Faraday v0.9.1
       Authorization:
-      - Basic ZWxsb19lc3B0ZXN0OmQhNXRyVDN0IW5n
+      - Basic <NCMEC_CREDS>
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Thu, 06 Nov 2014 19:13:18 GMT
+      - Wed, 03 Feb 2016 23:35:02 GMT
       Content-Type:
       - application/xml;charset=ISO-8859-1
       Content-Language:
@@ -63,25 +65,25 @@ http_interactions:
       Content-Length:
       - '290'
       Set-Cookie:
-      - BIGipServerexttest.cybertip.org.app~exttest.cybertip.org_pool=2248154796.20480.0000;
+      - asdfjkl=!7iii2R3J2zxfJNNfZSxxvrbQscv0jLs3aeYiiODU6x2M0NXtz2gFb+gVbGJ9VKWZd6QKDx8qnMw28uc=;
         path=/
     body:
       encoding: UTF-8
-      string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><reportResponse><responseCode>0</responseCode><responseDescription>Success</responseDescription><reportId>2426674</reportId><fileId>bf0637816e515e9c6296f72a9d3ff8c9</fileId><hash>af3d0406f63a0f99a8684d568a59542f</hash></reportResponse>
+      string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><reportResponse><responseCode>0</responseCode><responseDescription>Success</responseDescription><reportId>7855776</reportId><fileId>e6cb48fbb2b565e69ccded9b9cda62fb</fileId><hash>af3d0406f63a0f99a8684d568a59542f</hash></reportResponse>
     http_version: '1.1'
     adapter_metadata:
-      effective_url: ***REMOVED***/upload
-  recorded_at: Thu, 06 Nov 2014 19:13:19 GMT
+      effective_url: "<NCMEC_ENDPOINT>/upload"
+  recorded_at: Wed, 03 Feb 2016 23:35:02 GMT
 - request:
     method: post
-    uri: ***REMOVED***/fileinfo
+    uri: "<NCMEC_ENDPOINT>/fileinfo"
     body:
       encoding: UTF-8
       string: |
         <?xml version="1.0" encoding="UTF-8"?>
         <fileDetails xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://report.cybertip.org/ispws/xsd">
-          <reportId>2426674</reportId>
-          <fileId>bf0637816e515e9c6296f72a9d3ff8c9</fileId>
+          <reportId>7855776</reportId>
+          <fileId>e6cb48fbb2b565e69ccded9b9cda62fb</fileId>
           <details>
             <nameValuePair>
               <name>Got details</name>
@@ -95,18 +97,20 @@ http_interactions:
         </fileDetails>
     headers:
       User-Agent:
-      - Faraday v0.9.0
+      - Faraday v0.9.1
       Content-Type:
       - text/xml; charset=utf-8
       Authorization:
-      - Basic ZWxsb19lc3B0ZXN0OmQhNXRyVDN0IW5n
+      - Basic <NCMEC_CREDS>
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Thu, 06 Nov 2014 19:13:19 GMT
+      - Wed, 03 Feb 2016 23:35:20 GMT
+      X-Frame-Options:
+      - SAMEORIGIN
       Content-Type:
       - application/xml;charset=ISO-8859-1
       Content-Language:
@@ -114,13 +118,13 @@ http_interactions:
       Content-Length:
       - '245'
       Set-Cookie:
-      - BIGipServerexttest.cybertip.org.app~exttest.cybertip.org_pool=2248154796.20480.0000;
+      - asdfjkl=!ROmIkqGJPUIsL1ZfZSxxvrbQscv0jCXnG4yWHa2dQlY7gqGtUEyX6q3yOKmee8my+06c+gzsxZwXjLs=;
         path=/
     body:
       encoding: UTF-8
-      string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><reportResponse><responseCode>0</responseCode><responseDescription>Success</responseDescription><reportId>2426674</reportId><fileId>bf0637816e515e9c6296f72a9d3ff8c9</fileId></reportResponse>
+      string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><reportResponse><responseCode>0</responseCode><responseDescription>Success</responseDescription><reportId>7855776</reportId><fileId>e6cb48fbb2b565e69ccded9b9cda62fb</fileId></reportResponse>
     http_version: '1.1'
     adapter_metadata:
-      effective_url: ***REMOVED***/fileinfo
-  recorded_at: Thu, 06 Nov 2014 19:13:19 GMT
-recorded_with: VCR 2.9.3
+      effective_url: "<NCMEC_ENDPOINT>/fileinfo"
+  recorded_at: Wed, 03 Feb 2016 23:35:02 GMT
+recorded_with: VCR 3.0.1

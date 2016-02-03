@@ -2,26 +2,26 @@
 http_interactions:
 - request:
     method: post
-    uri: ***REMOVED***/submit
+    uri: "<NCMEC_ENDPOINT>/submit"
     body:
       encoding: UTF-8
       string: <?xml version="1.0" encoding="UTF-8"?><report xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="https://report.cybertip.org/ispws/xsd"><incidentSummary><incidentType>Child
-        Pornography (possession, manufacture, and distribution)</incidentType><incidentDateTime>2012-10-15T09:00:00-06:00</incidentDateTime></incidentSummary><reporter><reportingPerson><firstName>Test</firstName><lastName>User</lastName></reportingPerson></reporter></report>
+        Pornography (possession, manufacture, and distribution)</incidentType><incidentDateTime>2012-10-15T09:00:00-06:00</incidentDateTime></incidentSummary><reporter><reportingPerson><firstName>Test</firstName><lastName>User</lastName><email>test@ello.co</email></reportingPerson></reporter></report>
     headers:
       User-Agent:
-      - Faraday v0.9.0
+      - Faraday v0.9.1
       Content-Type:
       - text/xml; charset=utf-8
       Authorization:
-      - Basic ZWxsb19lc3B0ZXN0OmQhNXRyVDN0IW5n
+      - Basic <NCMEC_CREDS>
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Thu, 06 Nov 2014 19:13:13 GMT
+      - Wed, 03 Feb 2016 23:34:59 GMT
       Content-Type:
       - application/xml;charset=ISO-8859-1
       Content-Language:
@@ -29,33 +29,35 @@ http_interactions:
       Content-Length:
       - '196'
       Set-Cookie:
-      - BIGipServerexttest.cybertip.org.app~exttest.cybertip.org_pool=2248154796.20480.0000;
+      - asdfjkl=!2HIAju8VLZ+4xxtfZSxxvrbQscv0jPRmxCLqsV+2Ga6CGtUepHyf0FfmFsJeqIJ4ELABRzuZN7K+ZBM=;
         path=/
     body:
       encoding: UTF-8
-      string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><reportResponse><responseCode>0</responseCode><responseDescription>Success</responseDescription><reportId>2426660</reportId></reportResponse>
+      string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><reportResponse><responseCode>0</responseCode><responseDescription>Success</responseDescription><reportId>7855767</reportId></reportResponse>
     http_version: '1.1'
     adapter_metadata:
-      effective_url: ***REMOVED***/submit
-  recorded_at: Thu, 06 Nov 2014 19:13:14 GMT
+      effective_url: "<NCMEC_ENDPOINT>/submit"
+  recorded_at: Wed, 03 Feb 2016 23:34:59 GMT
 - request:
     method: post
-    uri: ***REMOVED***/retract
+    uri: "<NCMEC_ENDPOINT>/retract"
     body:
       encoding: US-ASCII
-      string: id=2426660
+      string: id=7855767
     headers:
       User-Agent:
-      - Faraday v0.9.0
+      - Faraday v0.9.1
       Authorization:
-      - Basic ZWxsb19lc3B0ZXN0OmQhNXRyVDN0IW5n
+      - Basic <NCMEC_CREDS>
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Thu, 06 Nov 2014 19:13:13 GMT
+      - Wed, 03 Feb 2016 23:35:18 GMT
+      X-Frame-Options:
+      - SAMEORIGIN
       Content-Type:
       - application/xml;charset=ISO-8859-1
       Content-Language:
@@ -63,13 +65,13 @@ http_interactions:
       Content-Length:
       - '196'
       Set-Cookie:
-      - BIGipServerexttest.cybertip.org.app~exttest.cybertip.org_pool=2248154796.20480.0000;
+      - asdfjkl=!1IGFAy2wsbkXLiFfZSxxvrbQscv0jDouPU1Nk6PzgDvvpbvmcsH/U6AEmFT8pO7FfpnPkGvAZYpedbs=;
         path=/
     body:
       encoding: UTF-8
-      string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><reportResponse><responseCode>0</responseCode><responseDescription>Success</responseDescription><reportId>2426660</reportId></reportResponse>
+      string: <?xml version="1.0" encoding="UTF-8" standalone="yes"?><reportResponse><responseCode>0</responseCode><responseDescription>Success</responseDescription><reportId>7855767</reportId></reportResponse>
     http_version: '1.1'
     adapter_metadata:
-      effective_url: ***REMOVED***/retract
-  recorded_at: Thu, 06 Nov 2014 19:13:14 GMT
-recorded_with: VCR 2.9.3
+      effective_url: "<NCMEC_ENDPOINT>/retract"
+  recorded_at: Wed, 03 Feb 2016 23:34:59 GMT
+recorded_with: VCR 3.0.1

@@ -36,7 +36,7 @@ In development and staging, you can configure this gem to use the test NCMEC API
 
 ```ruby
 NcmecReporting.configure do |config|
-  config.base_uri = '***REMOVED***'
+  config.base_uri = 'https://exttest.cybertip.org/ispws'
 end
 ```
 
