@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
   # s.test_files  = `git ls-files -- {spec}/*`.split("\n")
 
   s.add_dependency 'fog-aws'
+  s.add_dependency 'net-ssh'
   s.add_dependency 'aasm'
   s.add_dependency 'nokogiri'
   s.add_dependency 'builder'
