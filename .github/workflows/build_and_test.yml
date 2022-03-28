@@ -1,0 +1,39 @@
+name: Tests
+
+on: [push] # without pull_request for the moment
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  specs:
+    name: 'Run tests'
+    # skip on [ci skip] and do not run 2 on push and interal PR
+    if: (contains(github.event.commits[0].message, '[ci skip]') == false) &&  (github.event_name == 'push' || github.event.pull_request.head.repo.full_name != github.repository)
+    continue-on-error: ${{ matrix.allow_failure || false }}
+    strategy:
+      fail-fast: false
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7.5
+          bundler-cache: true
+
+      - name: Run specs
+        run: |
+          RAILS_ENV=test bundle exec rspec spec
+
+      - name: Call home
+        uses: 8398a7/action-slack@v3
+        with:
+          job_name: Run tests # Match the name above.
+          status: ${{ job.status }}
+          fields: repo,message,commit,author,action,eventName,job,took # selectable (default: repo,message)
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        if: always() # Pick up events even if the job fails or is canceled.
