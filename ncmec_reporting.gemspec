@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'nokogiri'
   s.add_dependency 'builder'
   s.add_dependency 'typhoeus'
-  s.add_dependency 'faraday'
+  s.add_dependency 'faraday', '< 2'
 
   s.add_development_dependency 'bundler'
   s.add_development_dependency 'rake'
